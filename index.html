@@ -34,27 +34,35 @@
             </a>
         </div>
         <div>
-        <div class="formulario">
-            <form method="get" v-for="categoria of categorias">
-                <input type="checkbox" v-model="checked" @change="filtro" :value="categoria">
+            <div class="formulario">
+                <form method="get" v-for="categoria of categorias">
+                    <input type="checkbox" v-model="checked" v-on:change="filtro" :value="categoria">
                     {{categoria}}
-            </form>
-        </div>
-        <div class="formulario2">
-            <form action="#">
-                <input type="text" v-model="valueBusqueda" @keyup="filtro">
-                <button type="submit">Send</button>
-            </form>
-        </div>
-        <section class="container">
-            <div class="card"  v-if="eventos" v-for="each of eventosFiltrados">
-                <img v-bind:src="each.image" v-bind:alt="each.name">
-                <h3>{{each.name}}</h3>
-                <p>{{each.description}}</p>
+                </form>
+            </div>
+            <div class="formulario2">
+                <form action="#">
+                    <input type="text" v-model="valueBusqueda" v-on:keyup="filtro">
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+            <section class="container">
+                <div class="card" v-if="filtro" v-for="each of eventosFiltrados">
+                    <img v-bind:src="each.image" v-bind:alt="each.name">
+                    <h3>{{each.name}}</h3>
+                    <p>{{each.description}}</p>
                     <p>Price: {{each.price}}</p>
-                    <a href="./details.html?id=${{each.id}}"><h4 class="rectangulo">See more</h4></a>
+                    <a href="./details.html?id=${{each.id}}">
+                        <h4 class="rectangulo">See more</h4>
+                    </a>
+                </div>
+                <div v-else>
+                    <div class="card">
+                        <img src="img/no-image-available.webp" alt="NotFound">
+                        <h3>The event you are looking for was not found!</h3>
                     </div>
-        </section>
+                </div>
+            </section>
         </div>
     </main>
     <footer>
@@ -75,4 +83,5 @@
     <script src="./vue.js"></script>
     <script src="./app.js"></script>
 </body>
+
 </html>
