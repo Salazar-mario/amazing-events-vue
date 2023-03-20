@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: linear-gradient(45deg, red, blue, green, black);
+    background-size: 400% 400%;
+    position: relative;
+    animation: cambiar 10s ease-in-out infinite;
+    cursor: url(../img/cursor.png), pointer;
+}
+
+@keyframes cambiar {
+    0% {
+        background-position: 0 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+.fondo {
+    background-image: url(/img/img-meeting-conference-home.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 220px;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 190px;
+}
+
+nav a {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 15px;
+    color: white;
+    margin: 10px;
+    padding: 5px;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    background-color: rgb(255, 0, 119);
+}
+
+nav a:hover {
+    background-color: #ddd;
+    color: black;
+
+}
+
+nav a.active {
+    background-color: rgb(112, 15, 75);
+    color: white;
+}
+
+.posicion-flechas {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px;
+    background: linear-gradient(45deg,red,blue,green,black);
+    background-size: 400% 400%;
+    position: relative;
+    animation: cambiar 10s ease-in-out infinite;
+}
+
+.triangulo {
+    border-style: solid;
+    border-width: 18px;
+}
+
+.triangulo>div {
+    border-style: solid;
+    border-width: 10px;
+}
+
+.triangulo.right {
+    border-color: transparent transparent transparent black;
+}
+
+.triangulo.left {
+    border-color: transparent black transparent transparent;
+
+}
+
+.contact_form {
+    width: 470px;
+    margin: 30px auto;
+    border-radius: 10px;
+    padding-top: 15px;
+    background-color:  rgb(148, 139, 143);
+    padding-left: 30px;
+    cursor: url(../img/cursor.png), pointer;
+
+}
+
+
+input {
+    background-color: #ffffff;
+    width: 408px;
+    height: 40px;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    margin-top: 10px;
+    padding-left: 10px;
+    margin-bottom: 20px;
+    cursor: url(../img/cursor.png), pointer;
+
+}
+
+
+textarea {
+    background-color: #fbfbfb;
+    width: 405px;
+    height: 150px;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    margin-top: 10px;
+    padding-left: 10px;
+    margin-bottom: 20px;
+    padding-top: 15px;
+    cursor: url(../img/cursor.png), pointer;
+
+}
+
+
+label {
+    display: block;
+    float: center;
+    cursor: url(../img/cursor.png), pointer;
+
+}
+
+
+button {
+    height: 45px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    text-transform: uppercase;
+    background-color:   black;
+    border-style: solid;
+    border-radius: 10px;
+    width: 420px;
+    cursor: pointer;
+}
+
+
+button {
+    color: #fff;
+}
+
+
+span {
+    color: #080107;
+}
+
+
+h3 {
+    font-size: 16px;
+    padding-bottom: 30px;
+    color: #0e0e0e;
+}
+
+
+p {
+    font-size: 14px;
+    color: #0e0e0e;
+}
+
+footer {
+    background-color: rgb(219, 179, 179);
+    width: 100%;
+    height: 30px;
+    display: flex;
+    position: fixed;
+    bottom: 0;
+}
+
+footer p{
+    font-size: 23px;
+    color: rgb(5, 5, 5);
+    width: 100%;
+    text-align: center;
+
+}
+
+@media only screen and (min-width:375px) and (max-width:768px){
+    .contact_form {
+        width: 250px;
+    }
+    .contact_form input{
+        width: 200px;
+    }
+    button{
+        width: 200px;
+    }
+    textarea{
+        width: 200px;
+    }
+    footer p {
+        font-size: 18px;
+    }
+}
+@media only screen and (min-width:350px) and (max-width:775px) {
+    nav{
+        display:flex;
+        flex-direction: row;
+        align-items: flex-start;
+
+    }
+    
+    nav a{
+        width: 52px;
+        height: 30px;
+        font-size: 12px;
+        padding: 0;
+        margin: 5px;
+    }
+}
+@media only screen and (min-width:350px) and (max-width:625px) {
+    .fondo{
+        background-size: contain;
+    }
+}

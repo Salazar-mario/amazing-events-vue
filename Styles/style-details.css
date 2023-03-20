@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: linear-gradient(45deg, red, blue, green, black);
+    background-size: 400% 400%;
+    position: relative;
+    animation: cambiar 10s ease-in-out infinite;
+}
+
+@keyframes cambiar {
+    0% {
+        background-position: 0 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+.fondo {
+    background-image: url(/img/img-meeting-conference-home.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 220px;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 190px;
+}
+
+nav a {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 15px;
+    color: white;
+    margin: 10px;
+    padding: 5px;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    background-color: rgb(255, 0, 119);
+}
+
+nav a:hover {
+    background-color: #ddd;
+    color: black;
+
+}
+
+nav a.active {
+    background-color: rgb(112, 15, 75);
+    color: white;
+}
+
+.posicion-flechas {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px;
+    background: linear-gradient(45deg, red, blue, green, black);
+    background-size: 400% 400%;
+    position: relative;
+    animation: cambiar 10s ease-in-out infinite;
+
+}
+
+.triangulo {
+    border-style: solid;
+    border-width: 18px;
+}
+
+.triangulo>div {
+    border-style: solid;
+    border-width: 10px;
+}
+
+.triangulo.right {
+    border-color: transparent transparent transparent black;
+}
+
+.triangulo.left {
+    border-color: transparent black transparent transparent;
+
+}
+
+footer {
+    background-color: rgb(219, 179, 179);
+    width: 100%;
+    height: 30px;
+    display: flex;
+    position: fixed;
+    bottom: 0;
+}
+
+footer p {
+    font-size: 23px;
+    color: rgb(5, 5, 5);
+    width: 100%;
+    text-align: center;
+
+}
+
+html,
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: linear-gradient(45deg, red, blue, green, black);
+    background-size: 400% 400%;
+    position: relative;
+    animation: cambiar 10s ease-in-out infinite;
+}
+
+.wrapper {
+
+    position: absolute;
+    top:60%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 650px;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card {
+    flex: 1;
+    flex-basis: 600px;
+    flex-grow: 0;
+    background: #fff;
+    border: 2px solid #fff;
+    box-shadow: 0px 4px 7px rgba(0, 0, 0, .5);
+    cursor: pointer;
+    transition: all .5s cubic-bezier(.8, .5, .2, 1.4);
+    overflow: hidden;
+    position: relative;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    transition: all .5s cubic-bezier(.8, .5, .2, 1.4);
+}
+
+.descriptions {
+    position: absolute;
+    top:0px;
+    left:0px;
+    background-color: rgba(255, 255, 255, .7);
+    width: 100%;
+    height: 100%;
+    transition: all .7s ease-in-out;
+    padding: 20px;
+    box-sizing: border-box;
+    clip-path: circle(0% at 100% 100%);
+}
+
+.card:hover .descriptions {
+    left: 0px;
+    transition: all .7s ease-in-out;
+    clip-path: circle(75%);
+}
+
+.card:hover {
+    transition: all .5s cubic-bezier(.8, .5, .2, 1.4);
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, .3);
+    transform: scale(.97);
+}
+
+.card:hover img {
+    transition: all .5s cubic-bezier(.8, .5, .2, 1.4);
+    transform: scale(1.6) rotate(20deg);
+    filter: blur(3px);
+}
+
+.card h1 {
+    color: #ff3838;
+    letter-spacing: 1px;
+    margin: 0px;
+    font-size: 40px;
+    text-align: center;
+}
+
+.card p {
+    line-height: 30px;
+    font-size: 25px;
+    height: 50%;
+
+}
+
+
+@media only screen and (min-width:375px) and (max-width:800px) {}
+
+@media only screen and (min-width:375px) and (max-width:800px) {
+    footer p {
+        font-size: 18px;
+    }
+
+}
+
+@media only screen and (min-width:350px) and (max-width:775px) {
+    nav {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    nav a {
+        width: 52px;
+        height: 30px;
+        font-size: 12px;
+        padding: 0;
+        margin: 5px;
+    }
+
+    .card {
+        width: 220px;
+    }
+
+    .card .imgs img {
+        width: 300px;
+    }
+
+    .card .details {
+        width: 190px;
+    }
+}
+
+@media only screen and (min-width:350px) and (max-width:625px) {
+    .fondo {
+        background-size: contain;
+    }
+}
+
+@media only screen and (min-width:799px) and (max-width:1200px) {
+    .card {
+        width: 400px;
+    }
+
+    .card .imgs img {
+        width: 500px;
+    }
+
+    .card .details {
+        width: 250px;
+    }
+
+}
