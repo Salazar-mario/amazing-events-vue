@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <main>
+    <main id="app">
         <header>
             <div class="fondo">
                 <nav>
@@ -33,20 +33,21 @@
                 <div class="triangulo right"></div>
             </a>
         </div>
-        <div id="app">
+        <div>
         <div class="formulario">
-            <form method="get" action="#"  v-if="categories" v-for="each in categories">
-                <input type="checkbox" :name="each" :id="each" :value="each">
+            <form method="get" v-for="categoria of categorias">
+                <input type="checkbox" v-model="checked" @change="filtro" :value="categoria">
+                    {{categoria}}
             </form>
         </div>
         <div class="formulario2">
             <form action="#">
-                <input type="text">
+                <input type="text" v-model="valueBusqueda" @keyup="filtro">
                 <button type="submit">Send</button>
             </form>
         </div>
         <section class="container">
-            <div class="card"  v-if="eventos" v-for="each of eventos">
+            <div class="card"  v-if="eventos" v-for="each of eventosFiltrados">
                 <img v-bind:src="each.image" v-bind:alt="each.name">
                 <h3>{{each.name}}</h3>
                 <p>{{each.description}}</p>

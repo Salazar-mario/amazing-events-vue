@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <main>
+    <main id="main">
         <header>
             <div class="fondo">
                 <nav>
@@ -32,19 +32,30 @@
                 <div class="triangulo right"></div>
             </a>
         </div>
-        <div class="formulario" id="boxCheck">
-            <form method="get" id="checks" action="#">
+        <div class="formulario">
+            <form method="get" action="#" v-for="categoria of categorias">
+                <input type="checkbox" v-model="checked" @change="filtro" :value="categoria">
+                {{categoria}}
             </form>
         </div>
         <div class="formulario2">
             <form action="#">
-                <input type="text" id="input-texto">
+                <input v-model="valueBusqueda" @keyup="filtro" type="text">
                 <button type="submit">Send</button>
             </form>
         </div>
-        <section class="container" id="boxpast">
-
+        <section class="container">
+            <div class="card" v-if="eventosPasados" v-for="evento of filtradasPasado">
+                <img v-bind:src="evento.image" v-bind:alt="evento.name">
+                <h3>{{evento.name}}</h3>
+                <p>{{evento.description}}</p>
+                <p>Price: {{evento.price}}</p>
+                <a href="./details.html?id=${{evento.id}}">
+                    <h4 class="rectangulo">See more</h4>
+                </a>
+            </div>
         </section>
+        </div>
     </main>
     <footer>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="30px" height="30px">
@@ -62,7 +73,8 @@
         <p>Agustin Salazar | © FE05 Mindhub 2023</p>
     </footer>
 
-    <script src="./javascript/pastevent.js"></script>
+    <script src="./vue.js"></script>
+    <script src="./pastevent.js"></script>
 </body>
 
 </html>
