@@ -33,19 +33,28 @@
                 <div class="triangulo right"></div>
             </a>
         </div>
-        <div class="formulario" id="boxCheck">
-            <form method="get" id="checks" action="#">
+        <div id="app">
+        <div class="formulario">
+            <form method="get" action="#"  v-if="categories" v-for="each in categories">
+                <input type="checkbox" :name="each" :id="each" :value="each">
             </form>
         </div>
         <div class="formulario2">
             <form action="#">
-                <input type="text" id="input-texto">
+                <input type="text">
                 <button type="submit">Send</button>
             </form>
         </div>
-        <section class="container" id="boxCard">
-
+        <section class="container">
+            <div class="card"  v-if="eventos" v-for="each of eventos">
+                <img v-bind:src="each.image" v-bind:alt="each.name">
+                <h3>{{each.name}}</h3>
+                <p>{{each.description}}</p>
+                    <p>Price: {{each.price}}</p>
+                    <a href="./details.html?id=${{each.id}}"><h4 class="rectangulo">See more</h4></a>
+                    </div>
         </section>
+        </div>
     </main>
     <footer>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="30px" height="30px">
@@ -62,8 +71,7 @@
         </svg>
         <p>Agustin Salazar | © FE05 Mindhub 2023</p>
     </footer>
-    <script src="/javascript/index.js"></script>
-
+    <script src="./vue.js"></script>
+    <script src="./app.js"></script>
 </body>
-
 </html>
