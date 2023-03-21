@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <main>
+    <main id="main">
         <header>
             <div class="fondo">
                 <nav>
@@ -32,8 +32,19 @@
                 <div class="triangulo right"></div>
             </a>
         </div>
-        <section class="wrapper" id="idContainer">
-    
+        <section class="wrapper" v-if="idEvento">
+            <div class="card">
+            <img :src="idEvento.image">
+            <div class="descriptions">
+                <h1>{{idEvento.name}}</h1>
+                <p>{{idEvento.description}}</p>
+                <h2><span>Date</span>: {{idEvento.date}}</h2>
+                <h2><span>Category</span>: {{idEvento.category}}</h5>
+                <h2><span>Place</span>: {{idEvento.place}}</h2>
+                <h2><span>Capacity</span>: {{idEvento.capacity}}</h2>
+                <h2><span>Price</span>: ${{idEvento.price}}</h2>
+            </div>
+        </div>
         </section>
         <footer>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="30px" height="30px">
@@ -51,7 +62,8 @@
             <p>Agustin Salazar | © FE05 Mindhub 2023</p>
         </footer>
     </main>
-    <script src="./javascript/details.js"></script>
+    <script src="./vue.js"></script>
+    <script src="./details.js"></script>
 </body>
 
 </html>

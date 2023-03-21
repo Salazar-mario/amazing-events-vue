@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <main>
+    <main id="main">
         <header>
             <div class="fondo">
                 <nav>
@@ -45,16 +45,11 @@
                             <td>Event with larger capacity</td>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="tabla1">
                         <tr>
-                            <td id="MaxEventAssistance">Loading...</td>
-                            <td id="MinEventAssistance"></td>
-                            <td id="MaxEventCapacity"></td>
-                        </tr>
-                        <tr>
-                            <td id="MaxAssistance"></td>
-                            <td id="MinAssistance"></td>
-                            <td id="MaxCapacity"></td>
+                            <td>{{altaAsistencia.name}} {{altaAsistencia.percent}}%</td>
+                            <td>{{bajaAsistencia.name}} {{bajaAsistencia.percent}}%</td>
+                            <td>{{granCapacidad.name}} {{granCapacidad.capacity}}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -69,7 +64,12 @@
                             <td>Percentage of attendace</td>
                         </tr>
                     </thead>
-                    <tbody id="UpCategories">
+                    <tbody id="tablaFuturos" v-for="tabla of tablaFuturos">
+                        <tr>
+                            <td>{{tabla.name}}</td>
+                            <td>{{tabla.revenues}}</td>
+                            <td>{{tabla.porcentaje}}%</td>
+                        </tr>
                     </tbody>
                 </table>
                 <table>
@@ -83,7 +83,12 @@
                             <td>Percentage of attendace</td>
                         </tr>
                     </thead>
-                    <tbody id="PastCategories">
+                    <tbody id="tablaPasados" v-for="tabla of tablaPasados">
+                        <tr>
+                            <td>{{tabla.name}}</td>
+                            <td>{{tabla.revenues}}</td>
+                            <td>{{tabla.porcentaje}}%</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -106,7 +111,8 @@
 
         </footer>
     </main>
-    <script src="./javascript/stats.js"></script>
+    <script src="./vue.js"></script>
+    <script src="./stats.js"></script>
 </body>
 
 </html>

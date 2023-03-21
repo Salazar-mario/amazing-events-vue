@@ -52,7 +52,7 @@
                     <h3>{{each.name}}</h3>
                     <p>{{each.description}}</p>
                     <p>Price: {{each.price}}</p>
-                    <a href="./details.html?id=${{each.id}}">
+                    <a v-bind:href="'./details.html?id='+each.id">
                         <h4 class="rectangulo">See more</h4>
                     </a>
                 </div>

@@ -50,7 +50,7 @@
                 <h3>{{evento.name}}</h3>
                 <p>{{evento.description}}</p>
                 <p>Price: {{evento.price}}</p>
-                <a href="./details.html?id=${{evento.id}}">
+                <a v-bind:href="'./details.html?id='+evento.id">
                     <h4 class="rectangulo">See more</h4>
                 </a>
             </div>

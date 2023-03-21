@@ -15,8 +15,6 @@ body {
     background-size: 400% 400%;
     position: relative;
     animation: cambiar 10s ease-in-out infinite;
-    cursor: url(../img/cursor.png), pointer;
-
 }
 
 @keyframes cambiar {

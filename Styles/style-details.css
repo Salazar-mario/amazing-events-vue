@@ -197,17 +197,23 @@ body {
     color: #ff3838;
     letter-spacing: 1px;
     margin: 0px;
-    font-size: 40px;
+    font-size: 34px;
     text-align: center;
 }
 
 .card p {
     line-height: 30px;
-    font-size: 25px;
+    font-size: 20px;
     height: 50%;
 
 }
+.card h2{
+  font-size: 20px;
+}
 
+.card span{
+    color: red;
+}
 
 @media only screen and (min-width:375px) and (max-width:800px) {}
 
