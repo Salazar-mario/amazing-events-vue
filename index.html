@@ -47,7 +47,7 @@
                 </form>
             </div>
             <section class="container">
-                <div class="card" v-if="filtro" v-for="each of eventosFiltrados">
+                <div class="card" v-if="eventosFiltrados.length" v-for="each of eventosFiltrados">
                     <img v-bind:src="each.image" v-bind:alt="each.name">
                     <h3>{{each.name}}</h3>
                     <p>{{each.description}}</p>
@@ -56,9 +56,9 @@
                         <h4 class="rectangulo">See more</h4>
                     </a>
                 </div>
-                <div v-else>
+                <div v-else="eventosFiltrados.length">
                     <div class="card">
-                        <img src="img/no-image-available.webp" alt="NotFound">
+                        <img src="img/no-image-available.webp" v-bind:alt="notfound">
                         <h3>The event you are looking for was not found!</h3>
                     </div>
                 </div>
