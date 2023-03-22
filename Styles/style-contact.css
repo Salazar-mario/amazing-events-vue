@@ -15,7 +15,6 @@ body {
     background-size: 400% 400%;
     position: relative;
     animation: cambiar 10s ease-in-out infinite;
-    cursor: url(../img/cursor.png), pointer;
 }
 
 @keyframes cambiar {
@@ -108,7 +107,6 @@ nav a.active {
     padding-top: 15px;
     background-color:  rgb(148, 139, 143);
     padding-left: 30px;
-    cursor: url(../img/cursor.png), pointer;
 
 }
 
@@ -123,7 +121,6 @@ input {
     margin-top: 10px;
     padding-left: 10px;
     margin-bottom: 20px;
-    cursor: url(../img/cursor.png), pointer;
 
 }
 
@@ -140,7 +137,6 @@ textarea {
     padding-left: 10px;
     margin-bottom: 20px;
     padding-top: 15px;
-    cursor: url(../img/cursor.png), pointer;
 
 }
 
@@ -148,7 +144,6 @@ textarea {
 label {
     display: block;
     float: center;
-    cursor: url(../img/cursor.png), pointer;
 
 }
 
