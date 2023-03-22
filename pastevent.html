@@ -54,6 +54,12 @@
                     <h4 class="rectangulo">See more</h4>
                 </a>
             </div>
+            <div v-else="eventosPasados">
+                <div class="card">
+                    <img src="img/no-image-available.webp" v-bind:alt="notfound">
+                    <h3>The event you are looking for was not found!</h3>
+                </div>
+            </div>
         </section>
         </div>
     </main>
@@ -72,9 +78,9 @@
         </svg>
         <p>Agustin Salazar | © FE05 Mindhub 2023</p>
     </footer>
-
-    <script src="./vue.js"></script>
-    <script src="./pastevent.js"></script>
+</footer>
+<script src="./vue/vue.js"></script>
+<script src="./vue/pastevent.js"></script>
 </body>
 
 </html>

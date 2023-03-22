@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <main>
+    <main id="main">
         <header>
             <div class="fondo">
                 <nav>
@@ -32,7 +32,7 @@
                 <div class="triangulo right"></div>
             </a>
         </div>
-        <div id="main">
+        <div>
             <div class="formulario">
                 <form method="get" v-for="categoria of categorias">
                     <input type="checkbox" v-model="checked" @change="filtro" :value="categoria">
@@ -46,7 +46,7 @@
                 </form>
             </div>
             <section class="container">
-                <div class="card" v-if="eventosFuturos" v-for="evento of filtradasFuturo">
+                <div class="card" v-if="eventosFuturos.length" v-for="evento of filtradasFuturo">
                     <img v-bind:src="evento.image" v-bind:alt="evento.name">
                     <h3>{{evento.name}}</h3>
                     <p>{{evento.description}}</p>
@@ -54,6 +54,12 @@
                     <a v-bind:href="'./details.html?id='+evento.id">
                         <h4 class="rectangulo">See more</h4>
                     </a>
+                </div>
+                <div v-else="eventosFuturos.length">
+                    <div class="card">
+                        <img src="img/no-image-available.webp" v-bind:alt="notfound">
+                        <h3>The event you are looking for was not found!</h3>
+                    </div>
                 </div>
             </section>
         </div>
@@ -73,8 +79,9 @@
         </svg>
         <p>Agustin Salazar | © FE05 Mindhub 2023</p>
     </footer>
-    <script src="./vue.js"></script>
-    <script src="./upcoming.js"></script>
+    </footer>
+    <script src="./vue/vue.js"></script>
+    <script src="./vue/upcoming.js"></script>
 </body>
 
 </html>

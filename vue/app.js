@@ -29,7 +29,6 @@ const app = createApp({
                 console.log(error)
             }
         },
-
         async filtro() {
             try {
                 if (this.eventos.length == 0) {

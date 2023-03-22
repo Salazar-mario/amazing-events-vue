@@ -24,7 +24,7 @@ const app = createApp({
         filtro(){
             this.filtradasFuturo = this.eventosFuturos.filter( evento => {
                 return evento.name.toLowerCase().includes(this.valueBusqueda.toLowerCase())
-                && (this.checked.includes(evento.category) || this.checked.length == 0)
+                && (this.checked.includes(evento.category) || this.checked.length === 0)
             })
         },
     },
